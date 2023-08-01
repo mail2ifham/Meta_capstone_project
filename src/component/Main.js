@@ -1,9 +1,21 @@
-import React from 'react'
+import React from "react";
+import Hero from '../component/Hero';
+import Specials from '../component/Specials';
+import Testimonials from '../component/Testimonials';
+import About from '../component/About';
+
 
 function Main() {
   return (
-    <main>Main</main>
-  )
+    <main className="Main">
+      <div className="grid-container">
+      <Hero />
+      <Specials />
+      <Testimonials />
+      <About />
+      </div>
+    </main>
+  );
 }
 
-export default Main
+export default Main;
