@@ -1,8 +1,8 @@
 import React from "react";
 import { MdDeliveryDining } from "react-icons/md";
-import  greekSalad from "../assets/greek salad.jpg"
-import  bruchetta from "../assets/bruchetta.svg"
-import  lemonDessert from "../assets/lemon dessert.jpg"
+import  greekSalad from "../assets/greek_salad.jpg"
+import  bruchetta from "../assets/bruchetta.png"
+import  lemonDessert from "../assets/lemon_dessert.jpg"
 
 function Specials() {
   return (

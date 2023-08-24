@@ -1,6 +1,6 @@
 import React from "react";
-import marioAndAdrian from "../assets/Mario and Adrian A.png"
-import chef from "../assets/restaurant chef B.png"
+import marioAndAdrian from "../assets/Mario_and_Adrian_A.png"
+import chef from "../assets/restaurant_chef_B.png"
 
 function About() {
   return (
