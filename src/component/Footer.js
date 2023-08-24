@@ -1,14 +1,27 @@
 import React from "react";
 import "../App";
+import {
+  FaFacebook,
+  FaTiktok,
+  FaYoutube,
+  FaInstagram,
+  FaTwitter,
+  FaLocationPin,
+  FaEnvelope,
+  FaPhone,
+} from "react-icons/fa6";
+import logo from "../assets/logo-white.png";
 
 function Footer() {
   return (
     <div className="Footer">
       <div className="footer-container">
-        <img src="/assets/restaurant.jpg" alt="restaurent image" />
+        <div className="footer-img">
+          <img src={logo} alt="restaurant" />
+        </div>
         <div className="footer-nav">
           <section>
-            <h3>Doormat Navigation</h3>
+            <h3>Site Navigation</h3>
             <ul>
               <li>
                 <a href="#">Home</a>
@@ -30,17 +43,40 @@ function Footer() {
               </li>
             </ul>
           </section>
-          <section>
+          <section className="no-wrap">
             <h3>Contact</h3>
-            <p>Address</p>
-            <p>Phone number</p>
-            <p>Email</p>
+            <address>
+              <span>
+                <span>
+                  <FaLocationPin />
+                </span>
+                234 West Drive, Chicago, IL, 60603.
+              </span>
+              <br />
+              <span>
+                <span>
+                  <FaPhone />
+                </span>
+                (312) 484-7638
+              </span>
+              <br />
+              <span>
+                <span>
+                  <FaEnvelope />
+                </span>
+                customer@littlelemon.com
+              </span>
+            </address>
           </section>
-          <section>
-            <h3>Social Media Links</h3>
-            <p>facebook</p>
-            <p>tiktok</p>
-            <p>twitter</p>
+          <section className="social-media-container">
+            <h3>Contact with us</h3>
+            <div className="social-media">
+              <FaFacebook className="icons" />
+              <FaTiktok className="icons" />
+              <FaTwitter className="icons" />
+              <FaYoutube className="icons" />
+              <FaInstagram className="icons" />
+            </div>
           </section>
         </div>
       </div>

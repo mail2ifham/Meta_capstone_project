@@ -7,7 +7,7 @@ import About from '../component/About';
 
 function Main() {
   return (
-    <main className="Main">
+    <main>
       <div className="grid-container">
       <Hero />
       <Specials />
@@ -15,6 +15,7 @@ function Main() {
       <About />
       </div>
     </main>
+    
   );
 }
 

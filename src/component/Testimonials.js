@@ -1,5 +1,8 @@
 import React from "react";
 import { MdStar } from "react-icons/md";
+import testimonialsImg1 from  "../assets/testimonials_img1.jpg"
+import testimonialsImg2 from  "../assets/testimonials_img2.jpg"
+import testimonialsImg3 from  "../assets/testimonials_img3.jpg"
 
 function Testimonials() {
   return (
@@ -15,7 +18,7 @@ function Testimonials() {
               <MdStar />
               <MdStar />
             </div>
-            <img src="assets/testimonials_img1.jpg" alt="avatar" />
+            <img src={testimonialsImg1} alt="avatar" />
             <h3>Nastiya</h3>
             <p>
               I went to Little Lemon for lunch and was pleasantly surprised by
@@ -32,7 +35,7 @@ function Testimonials() {
               <MdStar />
               <MdStar />
             </div>
-            <img src="assets/testimonials_img2.jpg" alt="avatar" />
+            <img src={testimonialsImg2} alt="avatar" />
             <h3>Peter</h3>
             <p>
               Little Lemon is one of my favorite restaurants in town. The food
@@ -48,7 +51,7 @@ function Testimonials() {
               <MdStar />
               <MdStar />
             </div>
-            <img src="assets/testimonials_img3.jpg" alt="avatar" />
+            <img src={testimonialsImg3} alt="avatar" />
             <h3>Stephen</h3>
             <p>
               I had dinner at Little Lemon last night and it was amazing! The

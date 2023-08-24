@@ -1,5 +1,8 @@
 import React from "react";
 import { MdDeliveryDining } from "react-icons/md";
+import  greekSalad from "../assets/greek salad.jpg"
+import  bruchetta from "../assets/bruchetta.svg"
+import  lemonDessert from "../assets/lemon dessert.jpg"
 
 function Specials() {
   return (
@@ -11,7 +14,7 @@ function Specials() {
         </div>
         <div className="specials-card-container">
           <div className="specials-card">
-            <img src="/assets/greek salad.jpg" alt="greek salad" />
+            <img src={greekSalad} alt="greek salad" />
             <div className="specials-card-details">
               <h3>Greek salad <span>$12.99</span></h3>
               <p>
@@ -29,7 +32,7 @@ function Specials() {
             </div>
           </div>
           <div className="specials-card">
-            <img src="/assets/bruchetta.svg" alt="bruchetta " />
+            <img src={bruchetta} alt="bruchetta " />
             <div className="specials-card-details">
               <h3>Bruchetta <span>$5.99</span></h3>
               <p>
@@ -45,7 +48,7 @@ function Specials() {
             </div>
           </div>
           <div className="specials-card">
-            <img src="/assets/lemon dessert.jpg" alt="Lemon Dessert" />
+            <img src={lemonDessert} alt="Lemon Dessert" />
             <div className="specials-card-details">
               <h3>Lemon Dessert <span>$5.00</span></h3>
               <p>

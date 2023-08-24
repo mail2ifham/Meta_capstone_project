@@ -1,8 +1,10 @@
 import React from "react";
+import marioAndAdrian from "../assets/Mario and Adrian A.png"
+import chef from "../assets/restaurant chef B.png"
 
 function About() {
   return (
-    <section className="About">
+    <section className="About" id="about">
       <div className="about-container">
         <div className="about-text-area">
           <div className="about-title">
@@ -18,8 +20,8 @@ function About() {
           </p>
         </div>
         <div className="abut-images">
-          <img className="about-img1" src="assets/Mario and Adrian A.png" alt="Mario and Adrian" />
-          <img className="about-img2" src="assets/restaurant chef B.png " alt="chef" />
+          <img className="about-img1" src={marioAndAdrian} alt="Mario and Adrian" />
+          <img className="about-img2" src={chef} alt="chef" />
         </div>
       </div>
     </section>
