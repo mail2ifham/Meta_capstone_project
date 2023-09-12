@@ -1,6 +1,7 @@
 import React from "react";
-import marioAndAdrian from "../assets/Mario_and_Adrian_A.png"
-import chef from "../assets/restaurant_chef_B.png"
+import "./About.css"
+import marioAndAdrian from "../../assets/Mario_and_Adrian_A.png"
+import chef from "../../assets/restaurant_chef_B.png" // double dot  means go upper laval single dot means current dir
 
 function About() {
   return (

@@ -1,17 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  /* font-family: 'kerala'; */
-}
-
-section {
-  margin-bottom: 100px;
-}
-.form-reservation > button, .confirmation-form > button {
-  margin-top: 20px;
-}
-
-/* #region intro-reservation */
 .intro-reservation-container {
   display: flex;
   justify-content: center;
@@ -60,61 +46,7 @@ section {
 }
 /* #endregion intro-reservation*/
 
-/* #region form-reservation  */
 
-
-.form-reservation-container, .confirmation-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.form-reservation-container h2, .confirmation-container h2{ 
-    text-transform: uppercase;
-    font-family: "karla";
-    font-weight: 900;
-    padding-bottom: 50px;
-    line-height: 1;
-    text-align: center;
-}
-
-.form-reservation, .confirmation-form {
-    max-width: 30%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-}
-.form-reservation>*,.confirmation-form>*{
-    flex: 1 1 50%;
-}
-.form-reservation label, .confirmation-container label {
-  margin-top: 20px;
-    font-size: 18px;
-    font-weight: 900;
-}
-
-.form-reservation input,select, .confirmation-container input{
-  /* margin-bottom: 20px; */
-    padding:10px 5px;
-    font-family: inherit;
-    font-size: inherit;
-  }
-
-  .form-reservation select[dataInvalid = "true"],input[dataInvalid = "true"] {
-    border :2px solid red;
-    border-radius: 3px;
-  }
-  
-  .errorMessage{
-    padding: 0;
-    margin: 0;
-    color: red;
-    display: block;
-}
-
-/* #endregion form-reservation  */
 @media screen and (max-width: 765px) {
 
 /* #region intro-reservation mobile*/

@@ -1,8 +1,8 @@
 import React from "react";
-import Hero from '../component/Hero';
-import Specials from '../component/Specials';
-import Testimonials from '../component/Testimonials';
-import About from '../component/About';
+import Hero from '../Hero/Hero';
+import Specials from '../Specials/Specials';
+import Testimonials from '../Testimonials/Testimonials';
+import About from '../About/About';
 
 
 function Main() {

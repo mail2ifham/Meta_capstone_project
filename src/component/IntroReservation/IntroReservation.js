@@ -1,6 +1,7 @@
 import React from "react";
-import "./Booking";
-import reserveImage from "../assets/restaurant.jpg";
+import './IntroReservation.css'
+import "../Booking/Booking";
+import reserveImage from "../../assets/restaurant.jpg";
 
 function IntroReservation() {
   return (

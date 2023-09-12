@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import {useRef} from 'react'
 import { FaBars } from 'react-icons/fa';
 import { FaTimes } from 'react-icons/fa';
-import logo from '../assets/logo.svg'; 
+import logo from '../../assets/logo.svg'; 
 import { Link } from 'react-router-dom';
 
 function Nav() {

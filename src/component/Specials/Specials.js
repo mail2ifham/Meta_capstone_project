@@ -1,8 +1,10 @@
 import React from "react";
+import './Specials.css'
 import { MdDeliveryDining } from "react-icons/md";
-import  greekSalad from "../assets/greek_salad.jpg"
-import  bruchetta from "../assets/bruchetta.png"
-import  lemonDessert from "../assets/lemon_dessert.jpg"
+import  greekSalad from "../../assets/greek_salad.jpg"
+import  bruchetta from "../../assets/bruchetta.png"
+import  lemonDessert from "../../assets/lemon_dessert.jpg"
+
 
 function Specials() {
   return (

@@ -1,8 +1,9 @@
 import React from "react";
+import "./Testimonials.css";
 import { MdStar } from "react-icons/md";
-import testimonialsImg1 from  "../assets/testimonials_img1.jpg"
-import testimonialsImg2 from  "../assets/testimonials_img2.jpg"
-import testimonialsImg3 from  "../assets/testimonials_img3.jpg"
+import testimonialsImg1 from  "../../assets/testimonials_img1.jpg"
+import testimonialsImg2 from  "../../assets/testimonials_img2.jpg"
+import testimonialsImg3 from  "../../assets/testimonials_img3.jpg"
 
 function Testimonials() {
   return (

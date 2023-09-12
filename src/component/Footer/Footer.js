@@ -1,5 +1,6 @@
 import React from "react";
-import "../App";
+import "./Footer.css"
+import "../../App";
 import {
   FaFacebook,
   FaTiktok,
@@ -10,7 +11,7 @@ import {
   FaEnvelope,
   FaPhone,
 } from "react-icons/fa6";
-import logo from "../assets/logo-white.png";
+import logo from "../../assets/logo-white.png";
 
 function Footer() {
   return (
@@ -24,22 +25,22 @@ function Footer() {
             <h3>Site Navigation</h3>
             <ul>
               <li>
-                <a href="#">Home</a>
+                <a href="home">Home</a>
               </li>
               <li>
-                <a href="#">About</a>
+                <a href="about">About</a>
               </li>
               <li>
-                <a href="#">Menu</a>
+                <a href="menu">Menu</a>
               </li>
               <li>
-                <a href="#">Reservations</a>
+                <a href="reservations">Reservations</a>
               </li>
               <li>
-                <a href="#">Order Online</a>
+                <a href="Order_Online">Order Online</a>
               </li>
               <li>
-                <a href="#">Login</a>
+                <a href="Login">Login</a>
               </li>
             </ul>
           </section>

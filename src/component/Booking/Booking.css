@@ -1,0 +1,70 @@
+section {
+  margin-bottom: 100px;
+}
+.form-reservation > button{
+  margin-top: 20px;
+}
+
+.form-reservation-container,
+.confirmation-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-reservation-container h2,
+.confirmation-container h2 {
+  text-transform: uppercase;
+  font-family: "karla";
+  font-weight: 900;
+  padding: 25px 0;
+  line-height: 1;
+  text-align: center;
+}
+
+.form-reservation {
+  max-width: 30%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.form-reservation > *{
+  flex: 1 1 50%;
+}
+.form-reservation label {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.form-reservation input,
+select{
+  padding: 10px 5px;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.form-reservation select[dataInvalid="true"],
+input[dataInvalid="true"] {
+  border: 2px solid red;
+  border-radius: 3px;
+}
+
+.errorMessage {
+  padding: 0;
+  margin: 0;
+  color: red;
+  display: block;
+}
+
+.confirmation-container .confirm-icon{
+color: var(--primary-color);
+}
+
+@media screen and (max-width: 765px) {
+}
+
+@media screen and (min-width: 765px) and (max-width: 1024px) {
+}

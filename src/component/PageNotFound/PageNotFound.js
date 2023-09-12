@@ -7,7 +7,7 @@ function PageNotFound() {
       <div style={{ height: "50vh", textAlign: "center", padding: "5% 0"  }}>
         <TbError404Off size="150px" />
         <h1 style={{ }}>
-          Under Construction
+        Page Not Found
         </h1>
       </div>
     </main>

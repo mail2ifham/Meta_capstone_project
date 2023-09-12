@@ -1,6 +1,5 @@
-import "../styles/reservation.css";
 import Confirmation from "./Confirmation";
-import ReservationLayout from "./ReservationLayout";
+import ReservationLayout from "../ReservationLayout/ReservationLayout";
 import BookingForm from "./BookingForm";
 
 
