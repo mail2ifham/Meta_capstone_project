@@ -17,9 +17,6 @@ function BookingForm({
   const [occasion, setOccasion] = useState("Select");
   const [error, setError] = useState({});
 
-
-
-
   //Occasion Array
   const occasions = ["Birthday", "Anniversary"];
 
@@ -144,8 +141,7 @@ function BookingForm({
           <p className="errorMessage">{error.occasion}</p>
 
           <button type="submit">{isSubmitting ? <CgSpinner className="spinner" /> :"Reserve a table"}</button>
-          {/* <p className="errorMessage">{isSubmitting ? "submitting...": ''}</p> */}
-          
+
         </form>
       </div>
     </section>
