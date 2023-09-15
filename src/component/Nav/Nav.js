@@ -17,17 +17,19 @@ function Nav() {
     handleMenuClick();
   }
   return (
-    <nav className='Nav'>
+    <section className='Nav'>
     <div className="nav-container">
     <Link to="/" ><img src={logo} alt="Little Lemon logo" /></Link>
-      <ul>
-          <li><Link  to="/" >Home</Link></li>
-          <li><Link to="underConstruction" >About</Link></li>
-          <li><Link to="underConstruction" >Menu</Link></li>
-          <li><Link to="reservations" >Reservations</Link></li>
-          <li><Link to="underConstruction" >Order Online</Link></li>
-          <li><Link to="underConstruction" >Login</Link></li>
-      </ul>
+      <nav>
+        <ul>
+            <li><Link  to="/" >Home</Link></li>
+            <li><Link to="underConstruction" >About</Link></li>
+            <li><Link to="underConstruction" >Menu</Link></li>
+            <li><Link to="reservations" >Reservations</Link></li>
+            <li><Link to="underConstruction" >Order Online</Link></li>
+            <li><Link to="underConstruction" >Login</Link></li>
+        </ul>
+      </nav>
       <div className="toggle-btn" onClick={handleMenuClick}>
           {useShow?<FaBars /> : <FaTimes />}
       </div>
@@ -42,7 +44,7 @@ function Nav() {
             <li ><Link to="underConstruction" >Login</Link></li>
         </ul>
     </div>
-    </nav>
+    </section>
   )
 }
 

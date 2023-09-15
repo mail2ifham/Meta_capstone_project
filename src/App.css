@@ -56,3 +56,11 @@ button:hover {
 button:active{
   background-color: #ddbb10;
 }
+
+button:disabled {
+  background-color: var(--light-background-color);
+  transition: none;
+  box-shadow:none;
+  color: rgba(0,0,0,0.5);
+  
+}

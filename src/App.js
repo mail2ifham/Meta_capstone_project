@@ -15,6 +15,9 @@ import { useNavigate } from "react-router-dom";
 function App() {
   // pass fetch error to date field error
   const [dateFetchError, setDateFetchError] = useState(null);
+  const [isTimeLoading, setIsTimeLoading] = useState(true)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
 
   const [availableTimes, dispatchDate] = useReducer(
     updateTimes,
@@ -27,10 +30,12 @@ function App() {
     switch (action.type) {
       case "DATE_CHANGE":
         setDateFetchError(null);
+        setIsTimeLoading(false);
         return (availableTimes = action.payload);
-
-      case "INITIAL_VALUE":
-        setDateFetchError(null);
+        
+        case "INITIAL_VALUE":
+          setDateFetchError(null);
+          setIsTimeLoading(false);
         return (availableTimes = action.payload);
 
       case "ERROR":
@@ -42,6 +47,7 @@ function App() {
 
   async function fetchDataByDate(selectedDate) {
     const initialTimeSlots = GenerateTimeSlots(selectedDate);
+    setIsTimeLoading(true)
     try {
       let response = await fetchAPI(selectedDate);
 
@@ -52,6 +58,7 @@ function App() {
                 !response.find((res) => res === initialTimeSlot)
             )
           : initialTimeSlots;
+
 
       dispatchDate({ type: "DATE_CHANGE", payload: availableTimes });
       return response;
@@ -114,11 +121,14 @@ function App() {
   }, []);
 
   async function submitData(formData) {
+    setIsSubmitting(true)
     try {
       const response = await submitAPI(formData);
       if (response) navigate("reservations/confirm");
+      setIsSubmitting(false)
     } catch (error) {
       console.log(error);
+      setIsSubmitting(false)
     }
   }
 
@@ -138,6 +148,8 @@ function App() {
                 submitData={submitData}
                 fetchDataByDate={fetchDataByDate}
                 dateFetchError={dateFetchError}
+                isTimeLoading={isTimeLoading}
+                isSubmitting ={isSubmitting}
               />
             }
           />

@@ -63,6 +63,15 @@ input[dataInvalid="true"] {
 color: var(--primary-color);
 }
 
+
+.spinner {
+  animation: rotate 1.5s linear infinite; 
+}
+
+@keyframes rotate{
+  to{ transform: rotate(360deg); }
+}
+
 @media screen and (max-width: 765px) {
 }
 

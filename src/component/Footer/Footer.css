@@ -52,6 +52,10 @@
   font-size: 30px;
   padding: 7px;
 }
+.social-media-container .social-media > * {
+  color: #fff;
+
+}
 .social-media-container .social-media :hover {
   color: var(--primary-color);
   background-color: #00000010;

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Booking.css";
+import {CgSpinner} from "react-icons/cg"
 
 function BookingForm({
   title,
@@ -7,26 +8,22 @@ function BookingForm({
   fetchDataByDate,
   submitData,
   dateFetchError,
+  isTimeLoading,
+  isSubmitting
 }) {
   const [date, setDate] = useState(new Date().toISOString().split("T")[0]);
   const [time, setTime] = useState("select");
   const [gust, setGust] = useState("1");
   const [occasion, setOccasion] = useState("Select");
-  const [isOccasionValid, setIsOccasionValid] = useState(true);
-  const [isTimeValid, setIsTimeValid] = useState(true);
+  const [error, setError] = useState({});
 
-  const ERROR_MESSAGE = {
-    date: "Please Select the Valid Date",
-    time: "Please select the valid time",
-    gust: "Number of Gust must be between 1-12",
-    occasion: "Please select the Occasion",
-    fetch: dateFetchError,
-  };
+
+
 
   //Occasion Array
   const occasions = ["Birthday", "Anniversary"];
 
-  const isDateValid = dateFetchError || !date || date === "";
+  const isDateValid =  !date || date === "";
   const isGustValid = gust >= 1 && gust <= 12;
 
   function handleDate(e) {
@@ -34,19 +31,32 @@ function BookingForm({
     fetchDataByDate(e.target.value);
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    setIsOccasionValid(occasions.some((occ) => occ === occasion));
-    setIsTimeValid(availableTimes.some((timeSlot) => timeSlot === time));
+  function validate() {
+    const validateError = {};
 
-    if (!isDateValid && isTimeValid && isGustValid && isOccasionValid) {
-      // submitData({
-      //   date,
-      //   time,
-      //   gust,
-      //   occasion,
-      // });
-    }
+    if (!occasions.some((occ) => occ === occasion))
+      validateError.occasion = "Please select the Occasion";
+
+    if (!availableTimes.some((timeSlot) => timeSlot === time))
+      validateError.time = "Please select the valid time";
+
+    setError(validateError);
+
+    return  Object.keys(validateError).length === 0 ?true:false;
+  }
+
+  function handleSubmit(e) {
+
+    e.preventDefault();
+
+    if (validate() && !isDateValid && isGustValid){
+            submitData({
+        date,
+        time,
+        gust,
+        occasion,
+      });
+    };
   }
 
   return (
@@ -63,20 +73,22 @@ function BookingForm({
             className="reservation-date"
             onInvalid={(e) => e.preventDefault()}
             onChange={handleDate}
+            aria-label="select the desire date"
             value={date}
             required
             min={new Date().toISOString().split("T")[0]}
           />
-          {isDateValid && <p className="errorMessage">{ERROR_MESSAGE.date}</p>}
+          {isDateValid && <p className="errorMessage">Please Select the Valid Date</p>}
 
           <label htmlFor="time">Choose Time</label>
           <select
             type="select"
             id="time"
             required
-            datainvalid={!isTimeValid || dateFetchError ? "true" : "false"}
+            datainvalid={!!error.time || dateFetchError ? "true" : "false"}
             value={time}
             onChange={(e) => setTime(e.target.value)}
+            aria-label="select the desire time to book your table"
           >
             {/* prettier-ignore */}
             <option value="Select" > Select</option>
@@ -88,11 +100,11 @@ function BookingForm({
               ))}
           </select>
 
-          {(!isTimeValid ||dateFetchError) && (
-            <p className="errorMessage" >
-              {dateFetchError ? ERROR_MESSAGE.fetch : ERROR_MESSAGE.time}
+          {
+            <p className="errorMessage">
+              {isTimeLoading ? "Loading..." : (dateFetchError ? dateFetchError : error.time)}
             </p>
-          )}
+          }
 
           <label htmlFor="number">Gust</label>
           <input
@@ -106,30 +118,34 @@ function BookingForm({
             onInvalid={(e) => e.preventDefault()}
             value={gust}
             onChange={(e) => setGust(e.target.value)}
+            aria-label="Type number of Gust "
           />
-          {!isGustValid && <p className="errorMessage">{ERROR_MESSAGE.gust}</p>}
+          {!isGustValid && <p className="errorMessage">"Please select the Occasion"</p>}
 
           <label htmlFor="occasion">Occasion</label>
           <select
             type="select"
             id="occasion"
             required
-            datainvalid={!isOccasionValid ? "true" : "false"}
+            datainvalid={!!error.occasion ? "true" : "false"}
             value={occasion}
             onChange={(e) => setOccasion(e.target.value)}
+            aria-label=" select one of the occasion"
           >
-            <option value="Select">Select</option>
+            <option value="Select" disabled>
+              Select
+            </option>
             {occasions.map((occasion) => (
               <option data-testid={`occasion-type-${occasion}`} key={occasion}>
                 {occasion}
               </option>
             ))}
           </select>
-          {!isOccasionValid && (
-            <p className="errorMessage">{ERROR_MESSAGE.occasion}</p>
-          )}
+          <p className="errorMessage">{error.occasion}</p>
 
-          <button type="submit">Reserve a table</button>
+          <button type="submit">{isSubmitting ? <CgSpinner className="spinner" /> :"Reserve a table"}</button>
+          {/* <p className="errorMessage">{isSubmitting ? "submitting...": ''}</p> */}
+          
         </form>
       </div>
     </section>

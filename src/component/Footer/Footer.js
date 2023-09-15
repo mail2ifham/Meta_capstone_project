@@ -1,4 +1,5 @@
 import React from "react";
+
 import "./Footer.css"
 import "../../App";
 import {
@@ -72,11 +73,21 @@ function Footer() {
           <section className="social-media-container">
             <h3>Contact with us</h3>
             <div className="social-media">
-              <FaFacebook className="icons" />
-              <FaTiktok className="icons" />
-              <FaTwitter className="icons" />
-              <FaYoutube className="icons" />
-              <FaInstagram className="icons" />
+              <a href="https://facebook.com" target="_blank" rel=" noreferrer" >
+                <FaFacebook  className="icons" />
+              </a >
+              <a href="https://www.tiktok.com" target="_blank" rel="noreferrer" >
+                <FaTiktok className="icons" />
+              </a>
+              <a href="https://www.twitter.com" target="_blank" rel="noreferrer">
+                <FaTwitter className="icons" />
+              </a>
+              <a href="https://www.youtube.com" target="_blank" rel="noreferrer">
+                <FaYoutube className="icons" />
+              </a>
+              <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
+                <FaInstagram className="icons" />
+              </a>
             </div>
           </section>
         </div>
